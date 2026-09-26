@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <link rel="icon" type="image/png" href="assets/favicon.png"><base href="/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Квадратные корни — обучающая страница</title>
+<meta name="description" content="Свойства арифметического квадратного корня, уравнения x²=a, функция y=√x, вынесение и внесение множителя под знак корня, преобразование выражений с корнями — теория, примеры и задачи с проверкой на странице.">
+<link rel="stylesheet" href="assets/app.css">
+<link rel="stylesheet" href="">
+</head>
+<body>
+
+<!-- переиспользуемая уменьшенная спираль Теодора — маркер номера раздела -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="spiral-mini" viewBox="-42.0 -25.0 75.8 74.3">
+      <line x1="0" y1="0" x2="13.0" y2="13.0" class="mini-radius"/><line x1="0" y1="0" x2="3.807611844574883" y2="22.192388155425117" class="mini-radius"/><line x1="0" y1="0" x2="-9.005169430920471" y2="24.390713878860034" class="mini-radius"/><line x1="0" y1="0" x2="-21.200526370350488" y2="19.888129163399796" class="mini-radius"/>
+      <line x1="0" y1="0" x2="13" y2="0" class="mini-leg"/><line x1="13" y1="0" x2="13.0" y2="13.0" class="mini-leg"/><line x1="13.0" y1="13.0" x2="3.807611844574883" y2="22.192388155425117" class="mini-leg"/><line x1="3.807611844574883" y1="22.192388155425117" x2="-9.005169430920471" y2="24.390713878860034" class="mini-leg"/><line x1="-9.005169430920471" y1="24.390713878860034" x2="-21.200526370350488" y2="19.888129163399796" class="mini-leg"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="topbar">
+  <div class="topbar__inner">
+    <a class="brand" href="#top">
+      <span class="brand__radical" aria-hidden="true">√</span>
+      <span>Квадратные корни</span>
+    </a>
+    <nav class="quicknav" id="quicknav" aria-label="Разделы темы">
+      <a href="#sec-1" data-nav="sec-1">01 Свойства</a>
+      <a href="#sec-2" data-nav="sec-2">02 x²=a</a>
+      <a href="#sec-3" data-nav="sec-3">03 y=√x</a>
+      <a href="#sec-4" data-nav="sec-4">04 Вынесение</a>
+      <a href="#sec-5" data-nav="sec-5">05 Внесение</a>
+      <a href="#sec-6" data-nav="sec-6">06 Преобразования</a>
+      <a href="#sec-test" data-nav="sec-test">Тест</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" id="hero">
+    <div class="hero__wow" aria-hidden="true"><div class="hero__pattern"></div></div>
+    <div class="hero__grid">
+      <div class="hero__text">
+        <p class="eyebrow">Алгебра · 8 класс</p>
+        <h1>Квадратные корни: от определения до преобразования выражений</h1>
+        <p class="lede">
+          Корень — это не абстрактный значок, а длина отрезка. Спираль справа
+          построена циркулем и линейкой: каждый новый катет равен единице, а
+          гипотенуза очередного треугольника — это и есть √2, √3, √4…√17.
+          На этой странице та же логика: теория, разобранные примеры и задачи
+          с мгновенной проверкой — по каждому свойству корня.
+        </p>
+        <div class="hero__stats">
+          <div><b>6</b><span>разделов теории</span></div>
+          <div><b>22+</b><span>задачи для отработки</span></div>
+          <div><b>1</b><span>итоговый тест</span></div>
+        </div>
+        <a class="btn btn--primary" href="#sec-1">Начать с раздела 01</a>
+        <div class="progress-widget">
+          <p class="progress-widget__label">Ваш прогресс по разделам (считается в этом браузере)</p>
+          <canvas id="progress-chart" height="120" role="img" aria-label="Диаграмма прогресса по 6 разделам темы"></canvas>
+        </div>
+      </div>
+      <div class="hero__spiral" data-signature-slot data-masterica-signature="theodorus-spiral">
+        <svg id="spiral-hero" viewBox="-144.2 -182.4 337.1 311.5" role="img" aria-label="Спираль Теодора: геометрическое построение корней от √2 до √17">
+          <line x1="0" y1="0" x2="34.0" y2="34.0" class="mini-radius"/><line x1="0" y1="0" x2="9.958369439657385" y2="58.04163056034261" class="mini-radius"/><line x1="0" y1="0" x2="-23.55198158856123" y2="63.79109783701855" class="mini-radius"/><line x1="0" y1="0" x2="-55.4475305070705" y2="52.01510704273793" class="mini-radius"/><line x1="0" y1="0" x2="-78.70939354796852" y2="27.218217563077328" class="mini-radius"/><line x1="0" y1="0" x2="-89.82118433756834" y2="-4.914757796328234" class="mini-radius"/><line x1="0" y1="0" x2="-87.96358049711114" y2="-38.8639743995419" class="mini-radius"/><line x1="0" y1="0" x2="-74.22309057622292" y2="-69.96379653301992" class="mini-radius"/><line x1="0" y1="0" x2="-50.90182506521627" y2="-94.70482672509422" class="mini-radius"/><line x1="0" y1="0" x2="-20.953529278928" y2="-110.80139715164745" class="mini-radius"/><line x1="0" y1="0" x2="12.45434895736001" y2="-117.11912393818658" class="mini-radius"/><line x1="0" y1="0" x2="46.26372782384259" y2="-113.52386307662991" class="mini-radius"/><line x1="0" y1="0" x2="77.74958238626893" y2="-100.69261362563188" class="mini-radius"/><line x1="0" y1="0" x2="104.6608153552632" y2="-79.91316367890528" class="mini-radius"/><line x1="0" y1="0" x2="125.2943054933397" y2="-52.88985735414369" class="mini-radius"/><line x1="0" y1="0" x2="138.51676983187562" y2="-21.566280980808763" class="mini-radius"/>
+          <path id="spiral-path" class="spiral-leg" d="M 0 0 L 34 0 L 34.0 34.0 L 9.958369439657385 58.04163056034261 L -23.55198158856123 63.79109783701855 L -55.4475305070705 52.01510704273793 L -78.70939354796852 27.218217563077328 L -89.82118433756834 -4.914757796328234 L -87.96358049711114 -38.8639743995419 L -74.22309057622292 -69.96379653301992 L -50.90182506521627 -94.70482672509422 L -20.953529278928 -110.80139715164745 L 12.45434895736001 -117.11912393818658 L 46.26372782384259 -113.52386307662991 L 77.74958238626893 -100.69261362563188 L 104.6608153552632 -79.91316367890528 L 125.2943054933397 -52.88985735414369 L 138.51676983187562 -21.566280980808763" fill="none"/>
+          <text x="23.36396103067893" y="23.36396103067893" class="spiral-label">√2</text><text x="-34.287647762857176" y="32.16510550278315" class="spiral-label">√5</text><text x="-29.711769410225166" y="-55.279903423623416" class="spiral-label">√10</text><text x="78.15124556719341" y="-12.167708812066342" class="spiral-label">√17</text>
+          <circle cx="0" cy="0" r="4" class="spiral-origin"/>
+        </svg>
+        <p class="hero__spiral-caption">Спираль Теодора — √17 построен из 16 прямоугольных треугольников с катетом 1</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== РАЗДЕЛ 1 ===================== -->
+  <section class="topic" id="sec-1" data-topic>
+    <div class="topic__head">
+      <span class="badge"><svg class="badge__spiral" viewBox="-42.0 -25.0 75.8 74.3"><use href="#spiral-mini"/></svg><b>01</b></span>
+      <h2>Свойства арифметического квадратного корня</h2>
+    </div>
+    <div class="topic__media">
+      <img src="assets/media-3bc5f80b4c.svg" data-masterica-required-media="media-3bc5f80b4c" alt="Геометрическая схема свойств квадратного корня: произведение, дробь, степень">
+    </div>
+
+    <div class="theory">
+      <p>Арифметический квадратный корень из числа <i>a</i> обозначают <b>√a</b>: знак <b>√</b> называют знаком арифметического квадратного корня, а выражение, стоящее под ним, — подкоренным выражением. По определению <b>√a = b</b>, если выполняются два условия: <b>b ≥ 0</b> и <b>b² = a</b>. При <b>a &lt; 0</b> выражение √a не имеет смысла.</p>
+      <p>Арифметическим квадратным корнем из неотрицательного числа <i>a</i> называют такое неотрицательное число <i>b</i>, что <b>b² = a</b>. Из этого определения следуют пять базовых свойств.</p>
+      <div class="rule-grid">
+        <div class="rule">
+          <p class="rule__formula">√(a·b) = √a · √b</p>
+          <p class="rule__cond">при a ≥ 0, b ≥ 0</p>
+          <p class="rule__text">Корень из произведения равен произведению корней.</p>
+        </div>
+        <div class="rule">
+          <p class="rule__formula">√(a⁄b) = √a ⁄ √b</p>
+          <p class="rule__cond">при a ≥ 0, b &gt; 0</p>
+          <p class="rule__text">Корень из дроби, числитель которой неотрицателен, а знаменатель положителен, равен корню из числителя, делённому на корень из знаменателя.</p>
+        </div>
+        <div class="rule">
+          <p class="rule__formula">√(a²) = |a|,&nbsp; (√a)² = a</p>
+          <p class="rule__cond">a — любое; во втором случае a ≥ 0</p>
+          <p class="rule__text">Корень «снимает» квадрат по модулю; возведение корня в квадрат возвращает подкоренное число.</p>
+        </div>
+        <div class="rule">
+          <p class="rule__formula">√a · √b = √(a·b)</p>
+          <p class="rule__cond">при a ≥ 0, b ≥ 0</p>
+          <p class="rule__text">Произведение корней равно корню из произведения подкоренных чисел.</p>
+        </div>
+        <div class="rule">
+          <p class="rule__formula">√a ⁄ √b = √(a⁄b)</p>
+          <p class="rule__cond">при a ≥ 0, b &gt; 0</p>
+          <p class="rule__text">Частное корней равно корню из частного подкоренных чисел.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="examples">
+      <h3>Разобранные примеры</h3>
+      <ol class="example-list">
+        <li><span class="ex-task">√(4·9)</span><span class="ex-step">= √4 · √9 = 2 · 3</span><span class="ex-res">= 6</span></li>
+        <li><span class="ex-task">√(81⁄9)</span><span class="ex-step">= √81 ⁄ √9 = 9 ⁄ 3</span><span class="ex-res">= 3</span></li>
+        <li><span class="ex-task">√((−7)²)</span><span class="ex-step">= |−7|</span><span class="ex-res">= 7</span></li>
+      </ol>
+    </div>
+
+    <div class="tasks" data-section="properties">
+      <h3>Задачи для отработки</h3>
+      <div class="tasks__list" data-task-list></div>
+    </div>
+  </section>
+
+  <!-- ===================== РАЗДЕЛ 2 ===================== -->
+  <section class="topic" id="sec-2" data-topic>
+    <div class="topic__head">
+      <span class="badge"><svg class="badge__spiral" viewBox="-42.0 -25.0 75.8 74.3"><use href="#spiral-mini"/></svg><b>02</b></span>
+      <h2>Уравнение x² = a</h2>
+    </div>
+    <div class="topic__media">
+      <img src="assets/media-6ba8b9c2d8.svg" data-masterica-required-media="media-6ba8b9c2d8" alt="Схема весов с двумя симметричными точками на числовой оси, поясняющая корни уравнения x² = a">
+    </div>
+
+    <div class="theory">
+      <p>Число решений уравнения x² = a зависит только от знака a:</p>
+      <div class="rule-grid rule-grid--3">
+        <div class="rule"><p class="rule__formula">a &gt; 0</p><p class="rule__text">два корня: x = √a и x = −√a</p></div>
+        <div class="rule"><p class="rule__formula">a = 0</p><p class="rule__text">один корень: x = 0</p></div>
+        <div class="rule"><p class="rule__formula">a &lt; 0</p><p class="rule__text">решений нет — квадрат числа не бывает отрицательным</p></div>
+      </div>
+    </div>
+
+    <div class="examples">
+      <h3>Разобранные примеры</h3>
+      <ol class="example-list">
+        <li><span class="ex-task">x² = 16</span><span class="ex-step">a = 16 &gt; 0</span><span class="ex-res">x = 4 или x = −4</span></li>
+        <li><span class="ex-task">x² = 0</span><span class="ex-step">a = 0</span><span class="ex-res">x = 0</span></li>
+        <li><span class="ex-task">x² = −9</span><span class="ex-step">a = −9 &lt; 0</span><span class="ex-res">решений нет</span></li>
+      </ol>
+    </div>
+
+    <div class="tasks" data-section="equations">
+      <h3>Задачи для отработки</h3>
+      <p class="tasks__hint">Если корней два — впишите оба через запятую. Если решений нет — впишите «нет».</p>
+      <div class="tasks__list" data-task-list></div>
+    </div>
+  </section>
+
+  <!-- ===================== РАЗДЕЛ 3 ===================== -->
+  <section class="topic" id="sec-3" data-topic>
+    <div class="topic__head">
+      <span class="badge"><svg class="badge__spiral" viewBox="-42.0 -25.0 75.8 74.3"><use href="#spiral-mini"/></svg><b>03</b></span>
+      <h2>Функция у = √х</h2>
+    </div>
+    <div class="topic__media">
+      <img src="assets/media-ea76d44973.svg" data-masterica-required-media="media-ea76d44973" alt="Восходящая кривая графика функции y = √x на клетчатой миллиметровке">
+    </div>
+
+    <div class="theory">
+      <p>Функция y = √x определена только там, где подкоренное выражение неотрицательно, то есть <b>область определения — x ≥ 0</b>. Значения самой функции тоже неотрицательны: <b>область значений — y ≥ 0</b>. Функция возрастает на всей области определения: чем больше x, тем больше √x, но рост замедляется — график похож на «половину» лежащей на боку параболы.</p>
+    </div>
+
+    <div class="graph-block">
+      <div class="graph-wrap">
+        <svg id="sqrt-graph" viewBox="0 0 360 190" role="img" aria-label="Интерактивный график функции y = корень из x"></svg>
+      </div>
+      <div class="graph-side">
+        <p class="graph-readout">x = <span id="graph-x">0</span>,&nbsp; y = √x = <span id="graph-y">0</span></p>
+        <p class="graph-hint">Потяните точку по кривой (или используйте стрелки ← →, когда точка в фокусе) — координаты обновляются вживую.</p>
+        <table class="ref-table">
+          <caption>Опорные значения</caption>
+          <thead><tr><th>x</th><th>0</th><th>1</th><th>4</th><th>9</th></tr></thead>
+          <tbody><tr><th>y=√x</th><td>0</td><td>1</td><td>2</td><td>3</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="tasks" data-section="function">
+      <h3>Задачи для отработки</h3>
+      <div class="tasks__list" data-task-list></div>
+    </div>
+  </section>
+
+  <!-- ===================== РАЗДЕЛ 4 ===================== -->
+  <section class="topic" id="sec-4" data-topic>
+    <div class="topic__head">
+      <span class="badge"><svg class="badge__spiral" viewBox="-42.0 -25.0 75.8 74.3"><use href="#spiral-mini"/></svg><b>04</b></span>
+      <h2>Вынесение корня</h2>
+    </div>
+    <div class="topic__media">
+      <img src="assets/media-2bbcbb7279.svg" data-masterica-required-media="media-2bbcbb7279" alt="Большой квадрат распадается на маленький целый квадрат и остаток внутри знака корня">
+    </div>
+
+    <div class="theory">
+      <p>Если подкоренное число раскладывается на множители так, что один из них — точный квадрат, его можно «вынести» из-под корня:</p>
+      <div class="rule-grid rule-grid--1">
+        <div class="rule"><p class="rule__formula">√(a²·b) = |a| · √b</p><p class="rule__text">Ищем в числе под корнем наибольший квадратный множитель.</p></div>
+      </div>
+    </div>
+
+    <div class="examples">
+      <h3>Разобранные примеры</h3>
+      <ol class="example-list">
+        <li><span class="ex-task">√72</span><span class="ex-step">= √(36·2) = √36·√2</span><span class="ex-res">= 6√2</span></li>
+        <li><span class="ex-task">√48</span><span class="ex-step">= √(16·3) = √16·√3</span><span class="ex-res">= 4√3</span></li>
+      </ol>
+    </div>
+
+    <div class="tasks" data-section="factor-out">
+      <h3>Задачи для отработки</h3>
+      <p class="tasks__hint">Впишите коэффициент и число под корнем: например, для √8 = 2·√2 — коэффициент 2, под корнем 2.</p>
+      <div class="tasks__list" data-task-list></div>
+    </div>
+  </section>
+
+  <!-- ===================== РАЗДЕЛ 5 ===================== -->
+  <section class="topic" id="sec-5" data-topic>
+    <div class="topic__head">
+      <span class="badge"><svg class="badge__spiral" viewBox="-42.0 -25.0 75.8 74.3"><use href="#spiral-mini"/></svg><b>05</b></span>
+      <h2>Внесение корня</h2>
+    </div>
+    <div class="topic__media">
+      <img src="assets/media-43da4f3f2b.svg" data-masterica-required-media="media-43da4f3f2b" alt="Маленький квадрат стрелкой затягивается внутрь большого знака радикала">
+    </div>
+
+    <div class="theory">
+      <p>Действие, обратное вынесению: множитель перед корнем возводится в квадрат и заносится под корень.</p>
+      <div class="rule-grid rule-grid--1">
+        <div class="rule"><p class="rule__formula">a · √b = √(a²·b)</p><p class="rule__cond">при a ≥ 0, b ≥ 0</p><p class="rule__text">Множитель a «превращается» в a² внутри корня.</p></div>
+      </div>
+    </div>
+
+    <div class="examples">
+      <h3>Разобранные примеры</h3>
+      <ol class="example-list">
+        <li><span class="ex-task">3√5</span><span class="ex-step">= √(3²·5) = √(9·5)</span><span class="ex-res">= √45</span></li>
+        <li><span class="ex-task">4√2</span><span class="ex-step">= √(4²·2) = √(16·2)</span><span class="ex-res">= √32</span></li>
+      </ol>
+    </div>
+
+    <div class="tasks" data-section="factor-in">
+      <h3>Задачи для отработки</h3>
+      <p class="tasks__hint">Впишите число, которое окажется под корнем.</p>
+      <div class="tasks__list" data-task-list></div>
+    </div>
+  </section>
+
+  <!-- ===================== РАЗДЕЛ 6 ===================== -->
+  <section class="topic" id="sec-6" data-topic>
+    <div class="topic__head">
+      <span class="badge"><svg class="badge__spiral" viewBox="-42.0 -25.0 75.8 74.3"><use href="#spiral-mini"/></svg><b>06</b></span>
+      <h2>Преобразование выражений, содержащих квадратные корни</h2>
+    </div>
+    <div class="topic__media">
+      <img src="assets/media-18f6e0bbc8.svg" data-masterica-required-media="media-18f6e0bbc8" alt="Несколько знаков радикала разного размера сливаются в один аккуратный знак корня">
+    </div>
+
+    <div class="theory">
+      <p>Три приёма встречаются чаще всего: приведение подобных корней, освобождение от иррациональности в знаменателе и применение формулы разности квадратов.</p>
+      <div class="rule-grid">
+        <div class="rule"><p class="rule__formula">m√a + n√a = (m+n)√a</p><p class="rule__text">Подобные корни складываются, как одночлены.</p></div>
+        <div class="rule"><p class="rule__formula">1⁄√a = √a⁄a</p><p class="rule__cond">при a &gt; 0</p><p class="rule__text">Умножаем числитель и знаменатель на √a.</p></div>
+        <div class="rule"><p class="rule__formula">(√a−√b)(√a+√b) = a−b</p><p class="rule__text">Разность квадратов убирает оба корня.</p></div>
+      </div>
+    </div>
+
+    <div class="examples">
+      <h3>Разобранные примеры</h3>
+      <ol class="example-list">
+        <li><span class="ex-task">(√3−1)(√3+1)</span><span class="ex-step">= (√3)² − 1² = 3 − 1</span><span class="ex-res">= 2</span></li>
+        <li><span class="ex-task">6⁄√6</span><span class="ex-step">= 6√6⁄6</span><span class="ex-res">= √6</span></li>
+      </ol>
+    </div>
+
+    <div class="tasks" data-section="transform">
+      <h3>Задачи для отработки</h3>
+      <div class="tasks__list" data-task-list></div>
+    </div>
+  </section>
+
+  <!-- ===================== ИТОГОВЫЙ ТЕСТ ===================== -->
+  <section class="topic topic--test" id="sec-test">
+    <div class="topic__head">
+      <span class="badge badge--test">✓</span>
+      <h2>Итоговый тест по теме «Квадратные корни»</h2>
+    </div>
+    <p class="theory">8 вопросов на все разделы темы. Результат считается прямо в браузере и запоминается на этом устройстве — сервер его не получает.</p>
+    <form id="quiz-form" class="quiz"></form>
+    <div class="quiz__actions">
+      <button type="button" class="btn btn--primary" id="quiz-submit">Проверить тест</button>
+      <button type="button" class="btn btn--ghost" id="quiz-reset">Сбросить ответы</button>
+    </div>
+    <div id="quiz-result" class="quiz__result" role="status" aria-live="polite"></div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Материал подготовлен как учебная страница по теме «Квадратные корни». Все вычисления и проверка ответов выполняются локально, в вашем браузере.</p>
+</footer>
+
+<script src="assets/app.js" defer></script>
+</body>
+</html>
